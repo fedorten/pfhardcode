@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test Telegram Integration</title>
+  </head>
+  <body>
+    <h1>Тестирование интеграции с Telegram</h1>
+    <div id="result"></div>
+
+    <script>
+      // Тест переменных окружения
+      const BOT_TOKEN = import.meta.env.PUBLIC_TELEGRAM_BOT_TOKEN;
+      const CHAT_ID = import.meta.env.PUBLIC_TELEGRAM_CHAT_ID;
+      const IS_DEV = import.meta.env.DEV;
+
+      console.log('Переменные окружения:', {
+          BOT_TOKEN: BOT_TOKEN ? 'настроен' : 'отсутствует',
+          CHAT_ID: CHAT_ID ? 'настроен' : 'отсутствует',
+          IS_DEV: IS_DEV
+      });
+
+      document.getElementById('result').innerHTML = `
+          <p><strong>BOT_TOKEN:</strong> ${BOT_TOKEN ? 'Настроен ✓' : 'Отсутствует ✗'}</p>
+          <p><strong>CHAT_ID:</strong> ${CHAT_ID ? 'Настроен ✓' : 'Отсутствует ✗'}</p>
+          <p><strong>IS_DEV:</strong> ${IS_DEV ? 'Да' : 'Нет'}</p>
+          <p><strong>Откройте консоль для детальной информации</strong></p>
+      `;
+    </script>
+  </body>
+</html>

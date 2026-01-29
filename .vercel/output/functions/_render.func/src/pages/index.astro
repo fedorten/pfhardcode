@@ -1,0 +1,380 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/main.css';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="HardCode — Backend для взрослых">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="fade-in">Backend-разработка для взрослых</h1>
+            <p class="hero-subtitle fade-in">
+                3–4 месяца интенсивного обучения через боевые задачи. Индивидуальное обучение → буткэмп → стажировка →
+                опыт, с которым берут на работу.
+            </p>
+            <button class="btn fade-in" onclick="window.showForm && window.showForm()">Начать карьеру в IT</button>
+
+            <div class="hero-stats fade-in">
+                <div class="stat-item">
+                    <span class="stat-number">87%</span>
+                    <span class="stat-label">Трудоустраиваются</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">200к+</span>
+                    <span class="stat-label">Средняя ЗП после</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3-4</span>
+                    <span class="stat-label">Месяца обучения</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Кому подходит -->
+    <section id="for-whom" class="fit-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Кому подходит HardCode</h2>
+            </div>
+            <div class="grid">
+                <div class="fit-card fit-yes fade-in">
+                    <h3>✅ Подходит, если вы:</h3>
+                    <ul>
+                        <li>Взрослый человек, который хочет всерьёз войти в IT</li>
+                        <li>Готов уделять 8–12 часов в неделю на обучение и практику</li>
+                        <li>Хотите реальный опыт, а не просто сертификат</li>
+                        <li>Ищете менторство от практикующих разработчиков</li>
+                        <li>Готовы к сложным задачам и интенсивному обучению</li>
+                    </ul>
+                </div>
+                <div class="fit-card fit-no fade-in">
+                    <h3>❌ Не подойдёт, если вы:</h3>
+                    <ul>
+                        <li>Ищете лёгкий курс "по вечерам для галочки"</li>
+                        <li>Не готовы писать код руками и разбираться в ошибках</li>
+                        <li>Хотите быстрых денег без усилий и практики</li>
+                        <li>Ждёте, что всё сделают за вас</li>
+                        <li>Не готовы работать в команде и получать код-ревью</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Этапы -->
+    <section id="steps" class="steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Как проходит обучение</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Индивидуальное обучение</h3>
+                        <p>2 часа в неделю 1-на-1 с опытным разработчиком. Быстро закрываем пробелы в знаниях, изучаем
+                            основы и подготавливаем к реальной работе. Фокус на практических заданиях и разборе ошибок.
+                        </p>
+                        <ul>
+                            <li>Персональный план обучения</li>
+                            <li>Разбор вашего кода и ошибок</li>
+                            <li>Подготовка к командной работе</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Буткэмп в мини-группе</h3>
+                        <p>Небольшая группа до 5 человек. Работа над реальными задачами, как в продуктовой компании.
+                            Преподаватель — тимлид с опытом 5+ лет. Обучение через решение практических кейсов.</p>
+                        <ul>
+                            <li>Командные проекты и код-ревью</li>
+                            <li>Работа с Git и CI/CD</li>
+                            <li>Подготовка к собеседованиям</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Стажировка на реальном проекте</h3>
+                        <p>Работа над реальным продуктом 5–10 часов в неделю. Созвоны, планирование задач, код-ревью,
+                            командная разработка. Получение опыта, который ценится работодателями.</p>
+                        <ul>
+                            <li>Опыт работы в команде</li>
+                            <li>Работа с production-кодом</li>
+                            <li>Портфолио для резюме</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Пакеты -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Пакеты обучения</h2>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card fade-in">
+                    <div class="package-header">
+                        <h3>Start</h3>
+                        <div class="package-price">25 000 ₽</div>
+                        <div class="package-period">за этап</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>Индивидуальные занятия 2ч/нед</li>
+                            <li>Проверка домашних заданий</li>
+                            <li>Доступ к материалам курса</li>
+                            <li>Поддержка в чате</li>
+                        </ul>
+                        <button class="btn btn-outline btn-block" onclick="window.showForm && window.showForm()">
+                            Выбрать пакет
+                        </button>
+                    </div>
+                </div>
+
+                <div class="package-card popular fade-in">
+                    <div class="popular-badge">Популярный</div>
+                    <div class="package-header">
+                        <h3>Core</h3>
+                        <div class="package-price">75 000 ₽</div>
+                        <div class="package-period">за весь курс</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>Всё из пакета Start</li>
+                            <li>Участие в буткэмпе</li>
+                            <li>Стажировка на реальном проекте</li>
+                            <li>Подготовка резюме и портфолио</li>
+                            <li>Помощь с трудоустройством</li>
+                            <li>Менторство 3 месяца после курса</li>
+                        </ul>
+                        <button class="btn btn-block" onclick="window.showForm && window.showForm()">
+                            Выбрать пакет
+                        </button>
+                    </div>
+                </div>
+
+                <div class="package-card fade-in">
+                    <div class="package-header">
+                        <h3>HardCode</h3>
+                        <div class="package-price">120 000 ₽</div>
+                        <div class="package-period">за весь курс</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>Всё из пакета Core</li>
+                            <li>Увеличенное время с ментором</li>
+                            <li>Индивидуальный проект для портфолио</li>
+                            <li>Гарантированное трудоустройство</li>
+                            <li>Пожизненный доступ к обновлениям</li>
+                            <li>Участие в закрытом комьюнити</li>
+                        </ul>
+                        <button class="btn btn-outline btn-block" onclick="window.showForm && window.showForm()">
+                            Выбрать пакет
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Истории успеха -->
+    <section id="stories" class="stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Истории успеха</h2>
+            </div>
+            <div class="stories-grid">
+                <div class="story-card fade-in">
+                    <div class="story-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            alt="Иван" class="story-avatar" />
+                        <div>
+                            <h3>Иван, 29 лет</h3>
+                            <p>Backend-разработчик</p>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <p><strong>Было:</strong> офисный менеджер, 60 000 ₽</p>
+                        <p><strong>Стало:</strong> backend в fintech, 210 000 ₽</p>
+                        <p class="story-quote">«Было тяжело. Постоянно хотелось сдаться, особенно когда код не работал в
+                            2 ночи. Но именно это дало результат — научился решать реальные проблемы, а не писать
+                            учебные примеры.»</p>
+                    </div>
+                </div>
+
+                <div class="story-card fade-in">
+                    <div class="story-header">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            alt="Алексей" class="story-avatar" />
+                        <div>
+                            <h3>Алексей, 34 года</h3>
+                            <p>Backend-разработчик</p>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <p><strong>Было:</strong> фриланс, нестабильный доход</p>
+                        <p><strong>Стало:</strong> продуктовая компания, 180 000 ₽</p>
+                        <p class="story-quote">«До HardCode я "учился" на трёх разных курсах. Здесь я впервые начал
+                            работать как разработчик — с дедлайнами, код-ревью и командой. Это другой уровень.»</p>
+                    </div>
+                </div>
+
+                <div class="story-card fade-in">
+                    <div class="story-header">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            alt="Мария" class="story-avatar" />
+                        <div>
+                            <h3>Мария, 27 лет</h3>
+                            <p>Backend-разработчик</p>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <p><strong>Было:</strong> почти ноль в программировании</p>
+                        <p><strong>Стало:</strong> junior backend, 140 000 ₽</p>
+                        <p class="story-quote">«Никто не уговаривал и не жалел. Или делаешь — или не идёшь дальше.
+                            Сначала было обидно, но потом поняла: так и работают в реальных проектах. Благодарна за эту
+                            школу жизни.»</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta-section fade-in">
+        <div class="container">
+            <h2 class="cta-title">Готовы попробовать себя в реальной разработке?</h2>
+            <p class="cta-text">
+                Оставьте заявку, и мы свяжемся с вами в течение 24 часов.
+                Обсудим ваш текущий уровень, цели и подберём подходящий формат обучения.
+            </p>
+            <button class="btn cta-btn" onclick="window.showForm && window.showForm()">
+                Записаться на курс
+            </button>
+        </div>
+    </section>
+
+    <!-- Форма (внедряем компонент) -->
+    <ContactForm />
+
+    <script>
+        // Глобальные функции для формы
+        window.showForm = function () {
+            document.getElementById('formOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.hideForm = function () {
+            document.getElementById('formOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        // Мобильное меню
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    mainNav.classList.toggle('active');
+                    const icon = this.querySelector('i');
+
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.replace('fa-bars', 'fa-times');
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        icon.classList.replace('fa-times', 'fa-bars');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                // Закрытие при клике на ссылку
+                document.querySelectorAll('#mainNav a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+            }
+
+            // Анимация при скролле
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // Анимация счетчиков
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(stat => counterObserver.observe(stat));
+
+            function animateCounter(element) {
+                const finalText = element.textContent;
+                const hasPlus = finalText.includes('+');
+                const hasPercent = finalText.includes('%');
+                const numericValue = parseFloat(finalText.replace(/[^0-9.]/g, ''));
+
+                let current = 0;
+                const increment = numericValue / 60;
+                const duration = 2000;
+
+                const timer = setInterval(() => {
+                    current += increment;
+
+                    if (current >= numericValue) {
+                        element.textContent = finalText;
+                        clearInterval(timer);
+                    } else {
+                        let displayValue = Math.floor(current);
+                        if (hasPlus) displayValue += '+';
+                        if (hasPercent) displayValue += '%';
+                        element.textContent = displayValue;
+                    }
+                }, duration / 60);
+            }
+
+            // Плавный скролл
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        window.scrollTo({
+                            top: target.offsetTop - headerHeight - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</Layout>
