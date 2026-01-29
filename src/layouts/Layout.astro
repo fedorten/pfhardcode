@@ -1,23 +1,84 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/main.css';
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <slot name="title">HardCode — Backend для взрослых</slot>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <slot name="head" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Hard<span>Code</span></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="#for-whom">Для кого</a></li>
+                    <li><a href="#steps">Этапы</a></li>
+                    <li><a href="#packages">Пакеты</a></li>
+                    <li><a href="#stories">Истории</a></li>
+                    <li><a href="#cta">Запись</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <slot />
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>HardCode</h4>
+                    <p>Онлайн-школа для взрослых, которые хотят получить реальный опыт backend-разработки и работать в IT с зарплатой от 200k ₽.</p>
+                </div>
+                <div>
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#for-whom">Для кого</a></li>
+                        <li><a href="#steps">Этапы обучения</a></li>
+                        <li><a href="#packages">Пакеты</a></li>
+                        <li><a href="#stories">Истории успеха</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>FAQ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Как проходят занятия?</a></li>
+                        <li><a href="#">Что если я не справлюсь?</a></li>
+                        <li><a href="#">Какие результаты после курса?</a></li>
+                        <li><a href="#">Есть ли рассрочка?</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/hardcode_school">Telegram: @HardCode</a></li>
+                        <li><a href="mailto:info@hardcode.ru">Email: info@hardcode.ru</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Договор-оферта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 HardCode. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

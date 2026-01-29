@@ -1,0 +1,81 @@
+---
+import '../styles/main.css';
+---
+
+<div class="form-overlay" id="formOverlay">
+  <div class="lead-form">
+    <button class="close-form" onclick="window.hideForm()">✕</button>
+    <h3 class="form-title">Записаться на курс</h3>
+
+    <form id="leadForm">
+      <input name="name" class="form-control" placeholder="Имя" required />
+      <input name="contact" class="form-control" placeholder="Telegram / WhatsApp / Email" required />
+
+      <select name="level" class="form-control" required>
+        <option value="">Уровень</option>
+        <option value="0">С нуля</option>
+        <option value="basic">Есть база</option>
+        <option value="code">Писал код</option>
+        <option value="experience">Другой язык</option>
+      </select>
+
+      <select name="goal" class="form-control" required>
+        <option value="">Цель</option>
+        <option value="job">Работа</option>
+        <option value="career">Смена профессии</option>
+        <option value="skill">Прокачка</option>
+        <option value="freelance">Фриланс</option>
+      </select>
+
+      <button type="submit" class="btn btn-block">Отправить заявку</button>
+    </form>
+  </div>
+</div>
+
+<script type="module">
+const overlay = document.getElementById('formOverlay')
+const form = document.getElementById('leadForm')
+
+window.showForm = () => {
+  overlay.classList.add('active')
+  document.body.style.overflow = 'hidden'
+}
+window.hideForm = () => {
+  overlay.classList.remove('active')
+  document.body.style.overflow = 'auto'
+}
+
+form.addEventListener('submit', async e => {
+  e.preventDefault()
+  const btn = form.querySelector('button')
+  btn.disabled = true
+  btn.textContent = 'Отправка...'
+
+  const data = Object.fromEntries(new FormData(form))
+
+  try {
+    const res = await fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    if (!res.ok) throw new Error()
+    alert('✅ Заявка отправлена')
+    form.reset()
+    hideForm()
+  } catch {
+    alert('❌ Ошибка отправки')
+  } finally {
+    btn.disabled = false
+    btn.textContent = 'Отправить заявку'
+  }
+})
+
+overlay.addEventListener('click', e => {
+  if (e.target === overlay) hideForm()
+})
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') hideForm()
+})
+</script>
